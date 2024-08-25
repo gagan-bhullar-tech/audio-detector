@@ -1,7 +1,7 @@
 {
   "name": "audio-detector",
   "version": "1.0.0",
-  "description": "This library detects audio in browser",
+  "description": "This library detects audio",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

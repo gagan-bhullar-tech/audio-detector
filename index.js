@@ -1,4 +1,4 @@
-const WildEmitter = require('wildemitter');
+import WildEmitter from 'wildemitter';
 
 let audioContext;
 
@@ -6,7 +6,7 @@ if (typeof window !== "undefined") {
     audioContext = window.AudioContext || window.webkitAudioContext;
 }
 
-module.exports = function (stream, options) {
+function audioDetector(stream, options) {
     options = options || {};
 
     // default threshold
@@ -15,13 +15,14 @@ module.exports = function (stream, options) {
     const emitter = new WildEmitter();
 
     // initialize the audio context
-    audioContext = options.audioContext || audioContext || new audioContext();
+    const context = options.audioContext || new audioContext();
 
-    const analyser = audioContext.createAnalyser();
+    const analyser = context.createAnalyser();
+    console.log(analyser)
     analyser.fftSize = 2048;
     const fftBins = new Float32Array(analyser.frequencyBinCount);
 
-    const source = audioContext.createMediaStreamSource(stream);
+    const source = context.createMediaStreamSource(stream);
 
     source.connect(analyser);
 
@@ -47,3 +48,5 @@ module.exports = function (stream, options) {
 
     return emitter;
 };
+
+export default audioDetector;
