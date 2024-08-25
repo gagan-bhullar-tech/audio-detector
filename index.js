@@ -1,3 +1,5 @@
+const WildEmitter = require('wildemitter');
+
 let audioContext;
 
 if (typeof window !== "undefined") {
@@ -5,6 +7,13 @@ if (typeof window !== "undefined") {
 }
 
 module.exports = function (stream, options) {
+    options = options || {};
+
+    // default threshold
+    options.threshold = options.threshold || -50;
+
+    const emitter = new WildEmitter();
+
     // initialize the audio context
     audioContext = options.audioContext || audioContext || new audioContext();
 
@@ -16,12 +25,15 @@ module.exports = function (stream, options) {
 
     source.connect(analyser);
 
+    // set speaking property
+    emitter.speaking = false;
+
     function checkAudio() {
         analyser.getFloatFrequencyData(fftBins);
         const maxVolume = Math.max(...fftBins);
 
         if (maxVolume > options.threshold) {
-            console.log('Audio detected');
+            emitter.emit("speaking");
         } else {
             console.log('No audio detected');
         }
