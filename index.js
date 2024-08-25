@@ -33,6 +33,7 @@ module.exports = function (stream, options) {
         const maxVolume = Math.max(...fftBins);
 
         if (maxVolume > options.threshold) {
+            emitter.speaking = true;
             emitter.emit("speaking");
         } else {
             console.log('No audio detected');
@@ -43,4 +44,6 @@ module.exports = function (stream, options) {
 
     // start checking audio
     checkAudio();
+
+    return emitter;
 };
