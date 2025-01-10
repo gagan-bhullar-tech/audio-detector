@@ -1,6 +1,6 @@
 {
   "name": "audio-detector",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "This library detects audio from browser stream and emit events",
   "main": "index.js",
   "scripts": {
@@ -16,7 +16,7 @@
     "browser"
   ],
   "author": "Gagan",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/gagan-bhullar-tech/audio-detector/issues"
   },

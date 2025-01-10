@@ -1,4 +1,4 @@
-Audio detector
+## Audio detector
 
 ## Usage in Browser
 
