@@ -1,6 +1,6 @@
 {
   "name": "audio-detector",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "This library detects audio from browser stream and emit events",
   "main": "index.js",
   "scripts": {
