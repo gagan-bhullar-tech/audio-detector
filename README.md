@@ -31,3 +31,5 @@ You can pass following options to customize the behavior:
 - `interval`: The interval in milliseconds to check the audio (default: 200)
 - `audioContext`: An optional custom audio context
 
+If you like my work, please consider giving it a star on [GitHub](http://github.com/gagan-bhullar-tech/audio-detectore) or
+Sponsor my work by following [sponsoring me](https://github.com/sponsors/gagan-bhullar-tech) link.
