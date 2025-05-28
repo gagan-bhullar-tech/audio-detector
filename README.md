@@ -32,5 +32,5 @@ You can pass following options to customize the behavior:
 - `audioContext`: An optional custom audio context
 ```
 
-If you like my work, please consider giving it a star on [GitHub](http://github.com/gagan-bhullar-tech/audio-detectore) or
+If you like my work, please consider giving it a star on [GitHub](http://github.com/gagan-bhullar-tech/audio-detector) or
 Sponsor my work by following [sponsoring me](https://github.com/sponsors/gagan-bhullar-tech) link.
